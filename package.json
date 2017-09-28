@@ -1,0 +1,35 @@
+{
+  "name": "sui-react-dijix",
+  "version": "0.0.1",
+  "description": "Semantic UI React Components for Dijix",
+  "main": "src/index.jsx",
+  "files": [
+    ".babelrc",
+    "src"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "eslint": "^4.2.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.1.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react-router-dom": "^4.1.2",
+    "react": "^15.6.1",
+    "semantic-ui-react": "^0.71.0"
+  },
+  "author": "hitchcott",
+  "license": "BSD-3-Clause"
+}
