@@ -1,5 +1,5 @@
 {
-  "name": "sui-react-dijix",
+  "name": "@digix/sui-react-dijix",
   "version": "0.0.1",
   "description": "Semantic UI React Components for Dijix",
   "main": "src/index.jsx",
@@ -31,5 +31,9 @@
     "semantic-ui-react": "^0.71.0"
   },
   "author": "hitchcott",
-  "license": "BSD-3-Clause"
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "dijix": "0.0.13",
+    "multi-hash": "^0.1.1"
+  }
 }
