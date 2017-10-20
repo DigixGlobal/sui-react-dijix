@@ -1,6 +1,6 @@
 {
   "name": "@digix/sui-react-dijix",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Semantic UI React Components for Dijix",
   "main": "src/index.jsx",
   "files": [
@@ -34,6 +34,8 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "dijix": "0.0.13",
+    "dijix-attestation": "0.0.9",
+    "dijix-image": "0.0.10",
     "multi-hash": "^0.1.1"
   }
 }
