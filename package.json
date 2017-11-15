@@ -1,6 +1,6 @@
 {
   "name": "@digix/sui-react-dijix",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Semantic UI React Components for Dijix",
   "main": "src/index.jsx",
   "files": [
