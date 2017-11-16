@@ -66,7 +66,8 @@ export default class Resolver extends Component {
   }
   render() {
     const { loading, dijixObject } = this.state;
-    if (loading) { return this.props.renderLoading() || null; }
-    return this.props.renderResolved(dijixObject);
+    const { renderLoading, renderResolved } = this.props;
+    if (loading) { return renderLoading ? renderLoading() : null; }
+    return renderResolved(dijixObject);
   }
 }
