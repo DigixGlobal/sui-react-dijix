@@ -6,13 +6,6 @@ import Dijix from 'dijix';
 import DijixImage from 'dijix-image';
 import DijixAttestation from 'dijix-attestation';
 
-export const dijix = new Dijix({
-  types: [
-    new DijixAttestation(),
-    new DijixImage(),
-  ],
-});
-
 const initialState = {
   dijixObject: {
     data: {},
@@ -27,20 +20,32 @@ export default class Resolver extends Component {
     hexHash: PropTypes.string,
     renderResolved: PropTypes.func.isRequired,
     renderLoading: PropTypes.func,
+    ipfsEndpoint: PropTypes.string,
+    httpEndpoint: PropTypes.string,
   }
   static defaultProps = {
     ipfsHash: undefined,
     hexHash: undefined,
     renderLoading: undefined,
+    ipfsEndpoint: 'https://ipfs.infura.io:5001',
+    httpEndpoint: 'https://ipfs.infura.io/ipfs',
   }
   constructor(props) {
     super(props);
     this.state = { ...initialState };
   }
   componentDidMount() {
-    const { ipfsHash, hexHash } = this.props;
+    const { ipfsHash, hexHash, ipfsEndpoint, httpEndpoint } = this.props;
+    this.dijix = new Dijix({
+      ipfsEndpoint,
+      httpEndpoint,
+      types: [
+        new DijixAttestation(),
+        new DijixImage(),
+      ],
+    });
     const hash = ipfsHash || this.decodeHash(hexHash);
-    dijix.fetch(hash).then((dijixObject) => {
+    this.dijix.fetch(hash).then((dijixObject) => {
       this.setState({ dijixObject, loading: false });
     });
   }
@@ -55,7 +60,7 @@ export default class Resolver extends Component {
       }
 
       const hash = ipfsHash || this.decodeHash(hexHash);
-      dijix.fetch(hash).then((dijixObject) => {
+      this.dijix.fetch(hash).then((dijixObject) => {
         this.setState({ dijixObject, loading: false });
       });
     }
